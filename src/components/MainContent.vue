@@ -14,12 +14,16 @@
       <span class="subtitle-lg your-list-text">
         Sua lista:
       </span>
-
-      <ul class="ingredient-your-list">
-        <li v-for="ingredient in ingredients" class="ingredient">
+      <ul v-if="ingredients.length" class="ingredient-your-list">
+        <li v-for="ingredient in ingredients" :key="ingredient"  class="ingredient">
           {{ ingredient }}
         </li>
       </ul>
+
+      <p v-else class="paragraph empty-list">
+        <img src="../assets/images/icones/lista-vazia.svg" alt="Ícone de pesquisa" />
+        Sua lista está vazia, selecione ingredientes para iniciar.
+      </p>
     </section>
   </main>
 </template>
