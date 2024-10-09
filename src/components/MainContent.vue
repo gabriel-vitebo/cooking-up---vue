@@ -1,8 +1,9 @@
 <script lang="ts">
   import SelectIngredients from "@/components/SelectIngredients.vue";
+  import Tag from "@/components/Tag.vue";
 
   export default{
-    components: {SelectIngredients},
+    components: {Tag, SelectIngredients},
     data() {
       return {
         ingredients: ['Alho', 'Manteiga', 'Oregano']
@@ -18,8 +19,8 @@
         Sua lista:
       </span>
       <ul v-if="ingredients.length" class="ingredient-your-list">
-        <li v-for="ingredient in ingredients" :key="ingredient"  class="ingredient">
-          {{ ingredient }}
+        <li v-for="ingredient in ingredients" :key="ingredient">
+          <Tag :text="ingredient" active />
         </li>
       </ul>
 
@@ -59,17 +60,7 @@
   flex-wrap: wrap;
 }
 
-.ingredient {
-  display: inline-block;
-  border-radius: 0.5rem;
-  min-width: 4.25rem;
-  padding: 0.5rem;
-  text-align: center;
-    transition: 0.2s;
-    color: var(--creme, #FFFAF3);
-  background: var(--coral, #F0633C);
-  font-weight: 700;
-}
+
 
 .empty-list {
   display: flex;
