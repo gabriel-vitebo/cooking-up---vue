@@ -4,9 +4,14 @@ import ListOfSelectedIngredients from "@/components/ListOfSelectedIngredients.vu
 
 export default{
     components: {ListOfSelectedIngredients, SelectIngredients},
+    methods: {
+      addIngredients(ingredient: string) {
+        this.ingredients.push(ingredient)
+      }
+    },
     data() {
       return {
-        ingredients: ['Alho', 'Manteiga', 'Oregano']
+        ingredients: [] as string[]
       }
     }
   }
@@ -15,7 +20,9 @@ export default{
 <template>
   <main class="main-content">
     <ListOfSelectedIngredients :ingredients="ingredients"/>
-    <SelectIngredients />
+    <SelectIngredients
+      @add-ingredient="addIngredients"
+    />
   </main>
 </template>
 

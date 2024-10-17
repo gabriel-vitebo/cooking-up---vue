@@ -12,13 +12,23 @@ export default {
         selected: false
       }
   },
+  methods: {
+    handleClick() {
+      this.selected = !this.selected
+
+      if(this.selected) {
+        this.$emit("addIngredient", this.ingredient)
+      }
+    }
+  },
+  emits: ['addIngredient']
 }
 </script>
 
 <template>
   <button
     class="ingredient"
-    @click="selected = !selected"
+    @click="handleClick"
     :aria-pressed="selected"
   >
     <Tag :text="ingredient" :active="selected"/>
