@@ -2,9 +2,10 @@
 import {fetchCategories} from "@/http";
 import type ICategories from "@/interfaces/ICategories";
 import CardCategory from "@/components/CardCategory.vue";
+import MainButton from "@/components/MainButton.vue";
 
 export default {
-  components: {CardCategory},
+  components: {MainButton, CardCategory},
   data() {
     return {
       categories: [] as ICategories[]
@@ -38,6 +39,8 @@ export default {
     <p class="paragraph tip">
       *Atenção: consideramos que você tem em casa sal, pimenta e água.
     </p>
+    <MainButton text="Buscar Receitas!" />
+
   </section>
 </template>
 
