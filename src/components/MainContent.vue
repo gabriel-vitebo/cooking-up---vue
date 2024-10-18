@@ -1,7 +1,6 @@
 <script lang="ts">
 import SelectIngredients from "@/components/SelectIngredients.vue";
 import ListOfSelectedIngredients from "@/components/ListOfSelectedIngredients.vue";
-import MainButton from "@/components/MainButton.vue";
 
 export default{
     components: {ListOfSelectedIngredients, SelectIngredients},
