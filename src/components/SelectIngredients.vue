@@ -13,7 +13,7 @@ export default {
   async created() {
     this.categories = await fetchCategories();
   },
-  emits: ["addIngredient"],
+  emits: ["addIngredient", "removeIngredient"],
 }
 </script>
 
@@ -30,6 +30,7 @@ export default {
         <CardCategory
             :category="category"
             @add-ingredient="$emit('addIngredient', $event)"
+            @remove-ingredient="$emit('removeIngredient', $event)"
         />
       </li>
     </ul>

@@ -7,6 +7,9 @@ export default{
     methods: {
       addIngredients(ingredient: string) {
         this.ingredients.push(ingredient)
+      },
+      removeIngredients(ingredient: string) {
+        this.ingredients = this.ingredients.filter(item => item !== ingredient)
       }
     },
     data() {
@@ -22,6 +25,7 @@ export default{
     <ListOfSelectedIngredients :ingredients="ingredients"/>
     <SelectIngredients
       @add-ingredient="addIngredients"
+      @remove-ingredient="removeIngredients"
     />
   </main>
 </template>

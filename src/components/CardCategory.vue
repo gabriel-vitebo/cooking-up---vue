@@ -9,7 +9,7 @@
     props: {
       category: {type: Object as PropType<ICategories>, required: true},
     },
-    emits: ['addIngredient']
+    emits: ['addIngredient', 'removeIngredient']
   }
 </script>
 
@@ -24,6 +24,7 @@
         <SelectableIngredient
             :ingredient="ingredient"
             @add-ingredient="$emit('addIngredient', $event)"
+            @remove-ingredient="$emit('removeIngredient', $event)"
         />
       </li>
     </ul>

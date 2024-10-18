@@ -18,10 +18,12 @@ export default {
 
       if(this.selected) {
         this.$emit("addIngredient", this.ingredient)
+      } else {
+        this.$emit("removeIngredient", this.ingredient)
       }
     }
   },
-  emits: ['addIngredient']
+  emits: ['addIngredient', 'removeIngredient']
 }
 </script>
 
